@@ -10,21 +10,25 @@ source:
   sha256: 292e3250325e8c309700f97a86fcd6e18aab6360fc31fb4874b00697a8a9a22b
 
 build:
-  number: 0
-  skip: True  # [py<33]
+  number: 1
+  noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
-
+  entry_points:
+    - terraformspawner = terraformspawner.cli:cli
+    
 requirements:
   host:
-    - python
+    - python >=3.3
     - pip
   run:
-    - python
+    - python >=3.3
     - jinja2
     - jupyterhub >=0.9.6,<1
 
 test:
   imports:
+    - terraformspawner
+  commands:
     - terraformspawner
 
 about:
