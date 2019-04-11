@@ -13,7 +13,9 @@ build:
   number: 0
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
-
+  entry_points:
+    - terraformspawner = terraformspawner.cli:cli
+    
 requirements:
   host:
     - python >=3.3
@@ -25,6 +27,8 @@ requirements:
 
 test:
   imports:
+    - terraformspawner
+  commands:
     - terraformspawner
 
 about:
