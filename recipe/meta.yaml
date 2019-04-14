@@ -1,5 +1,5 @@
 {% set name = "jupyterhub-terraformspawner" %}
-{% set version = "0.0.5" %}
+{% set version = "0.0.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a05ce72aa88f8d8dfb6ce2da1ed9a416cb9af2d13e381b7f6e002e6c960cf225
+  sha256: 40e86fdc96c9235d219849caf8f904d00c703e9a1aae335d9a3c078c0bfba19b
 
 build:
   number: 0
